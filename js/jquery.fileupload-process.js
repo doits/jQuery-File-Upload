@@ -14,18 +14,18 @@
 
 ;(function (factory) {
     'use strict';
-    if (typeof define === 'function' && define.amd) {
-        // Register as an anonymous AMD module:
-        define([
-            'jquery',
-            './jquery.fileupload'
-        ], factory);
-    } else if (typeof exports === 'object') {
+    if (typeof exports === 'object') {
         // Node/CommonJS:
         factory(
             require('jquery'),
             require('./jquery.fileupload')
         );
+    } else if (typeof define === 'function' && define.amd) {
+        // Register as an anonymous AMD module:
+        define([
+            'jquery',
+            './jquery.fileupload'
+        ], factory);
     } else {
         // Browser globals:
         factory(

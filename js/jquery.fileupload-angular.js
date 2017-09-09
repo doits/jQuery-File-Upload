@@ -14,17 +14,7 @@
 
 ;(function (factory) {
     'use strict';
-    if (typeof define === 'function' && define.amd) {
-        // Register as an anonymous AMD module:
-        define([
-            'jquery',
-            'angular',
-            './jquery.fileupload-image',
-            './jquery.fileupload-audio',
-            './jquery.fileupload-video',
-            './jquery.fileupload-validate'
-        ], factory);
-    } else if (typeof exports === 'object') {
+    if (typeof exports === 'object') {
         // Node/CommonJS:
         factory(
             require('jquery'),
@@ -34,6 +24,16 @@
             require('./jquery.fileupload-video'),
             require('./jquery.fileupload-validate')
         );
+    } else if (typeof define === 'function' && define.amd) {
+        // Register as an anonymous AMD module:
+        define([
+            'jquery',
+            'angular',
+            './jquery.fileupload-image',
+            './jquery.fileupload-audio',
+            './jquery.fileupload-video',
+            './jquery.fileupload-validate'
+        ], factory);
     } else {
         factory();
     }

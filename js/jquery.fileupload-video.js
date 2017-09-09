@@ -14,20 +14,20 @@
 
 ;(function (factory) {
     'use strict';
-    if (typeof define === 'function' && define.amd) {
-        // Register as an anonymous AMD module:
-        define([
-            'jquery',
-            'load-image',
-            './jquery.fileupload-process'
-        ], factory);
-    } else if (typeof exports === 'object') {
+    if (typeof exports === 'object') {
         // Node/CommonJS:
         factory(
             require('jquery'),
             require('blueimp-load-image/js/load-image'),
             require('./jquery.fileupload-process')
         );
+    } else if (typeof define === 'function' && define.amd) {
+        // Register as an anonymous AMD module:
+        define([
+            'jquery',
+            'load-image',
+            './jquery.fileupload-process'
+        ], factory);
     } else {
         // Browser globals:
         factory(
